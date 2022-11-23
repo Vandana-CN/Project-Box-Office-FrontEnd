@@ -1,0 +1,95 @@
+.nav{
+    /* background-color: #3a3939; */
+    background-color: rgb(34, 37, 57);;
+    height: 35px;
+    padding: 17px;
+  }
+  
+  .nav a:hover {
+    /* background-color: #555; */
+    /* background-color: #b6b9bd; */
+    background-color: rgb(51, 53, 69);;
+    color: white;
+  }
+  
+  .link{
+    margin-right: 15px;
+    margin-left: 10px;
+    color: whitesmoke;
+    text-decoration: none;
+    border-radius: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  
+  .messenger_logo
+  {
+    height: 50px;
+    width: 50px;
+    float: right;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: -6px;
+  }
+  
+  .main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 600px;
+      justify-content: space-evenly;
+      margin: 3% auto;
+      background-color: #f3f3f3;
+      border-radius: 10px;
+      color: #464159;
+  }
+  
+  @media(max-width: 768px){
+      .main{
+          background-color: transparent;
+      }
+  }
+  
+  .App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
