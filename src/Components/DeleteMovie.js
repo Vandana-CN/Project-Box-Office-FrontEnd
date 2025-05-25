@@ -83,7 +83,7 @@ const DeleteMovie = () => {
               </tr> */}
   <div className="col">
     <div className="card" style={{'height':500,'width':300}}>
-    <img src={user.image} class="card-img-top" alt="..."/>
+    <img src={`data:image/jpeg;base64,${user.image}`} class="card-img-top" alt="..."/>
       <div className="card-body">
         <h5 className="card-title" style={{color:'black'}}>{user.movieName}</h5>
         <button value={user.movieName} style={{backgroundColor:'rgb(248, 68, 100)',color:'white',borderRadius:5,width:120,height:40,borderColor:'rgb(34, 37, 57)',border:'none',fontSize:15,fontWeight:'bold'}} 

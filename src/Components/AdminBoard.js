@@ -9,7 +9,8 @@ const AdminBoard = () => {
   let navigate = useNavigate();
   const [user, setUser] = useState({
 
-    movieName: ""
+    movieName: "",
+     image: ""
 
   });
 
@@ -22,29 +23,50 @@ const AdminBoard = () => {
   };
 
 
+  // function PreviewImage(e) {
+  //   e.preventDefault();
+  //   let oFReader = new FileReader();
+  //   oFReader.readAsDataURL(e.target.files[0]);
+  //   oFReader.onload = function (oFREvent) {
+  //   user.image = oFREvent.target.result;
+  //   };
+
+  // }
+
   function PreviewImage(e) {
-    e.preventDefault();
     let oFReader = new FileReader();
     oFReader.readAsDataURL(e.target.files[0]);
     oFReader.onload = function (oFREvent) {
-    user.image = oFREvent.target.result;
+      const base64 = oFREvent.target.result.split(',')[1]; // strip prefix
+      setUser(prev => ({
+        ...prev,
+        image: base64
+      }));
     };
-
   }
+  
+  
 
   const onSubmit = async (e) => {
-
     e.preventDefault();
-    console.log(user.movieName);
-    console.log(user);
+    
+    console.log("Submitting movie:", user);
 
-     await axios.post("http://localhost:8080/api/test/movie",user);
-
-     alert("Movie Added Succesfully")
-
-     navigate("/")
-
-   };
+    if (!user.movieName || !user.image) {
+      alert("Please enter both movie name and poster image.");
+      return;
+    }
+  
+    try {
+      await axios.post("http://localhost:8080/api/test/movie", user);
+      alert("Movie Added Successfully");
+      navigate("/");
+    } catch (error) {
+      console.error("Error while adding movie:", error);
+      alert("Failed to add movie. Check console for error details.");
+    }
+  };
+  
 
   useEffect(() => {
     UserService.getAdminBoard().then(

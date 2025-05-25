@@ -19,12 +19,13 @@ const login = (username, password) => {
       });
   };
 
-  const signup = (email,username, password) => {
+  const signup = (email,username, password, role = ["user"]) => {
     return axios
       .post(API_URL + "signup", {
         email,
         username,
         password,
+        role,
       }).then((response) => {
         console.log(response.data.accessToken)
           if (response.data.accessToken) {

@@ -192,8 +192,10 @@ const App = () => {
           <Route path="/" element={<Home/>} />
           {/* <Route path="/home" element={<Home/>} /> */}
           <Route path="/home"  element={<Home/>} />
-          <Route path="/login" element={<Protected Component={Login}/>} />
-          <Route path="/signup" element={<Protected Component={Signup}/>} />
+          <Route path="/login"  element={<Login/>} />
+          <Route path="/signup"  element={<Signup/>} />
+          {/* <Route path="/login" element={<Protected Component={Login}/>} />
+          <Route path="/signup" element={<Protected Component={Signup}/>} /> */}
           <Route path="/profile" element={<Profile/>} />
           {/* <Route path="/AllBookingsAdmin" element={<AllBookingsAdmin/>} /> */}
           <Route path="/AllBookingsAdmin" element={<ProtectedAuthorized Component={AllBookingsAdmin}/>} />

@@ -16,21 +16,22 @@ const Signup = () => {
   const onInputChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
-//   const onSubmit = async (e) => {
-//     e.preventDefault();
+
+  // const onSubmit = async (e) => {
+  //   e.preventDefault();
    
 
-//      await axios.post("http://localhost:8080/api/auth/signup",user);
-//      alert("Registered Succesfully")
-//      navigate("/login")
-//    };
+  //    await axios.post("http://localhost:8080/api/auth/signup",user);
+  //    alert("Registered Succesfully")
+  //    navigate("/login")
+  //  };
 
 
 const handleSignup = (e) => {
     e.preventDefault();
 
-    
-      AuthService.signup(email,username, password).then(
+    console.log("Sending signup payload:", { email, username, password, role: ["user"] });
+      AuthService.signup(email,username, password, ["user"]).then(
         () => {
             alert("Registered successfully");
           navigate("/login");
@@ -67,7 +68,7 @@ href=
         <form onSubmit={(e) => handleSignup(e)}>
         <div className="form-group">
             <label style={{fontSize: 20}} htmlFor="username">Email</label>
-            <i style={{position: 'relative',left: 230,top:20}} class="fa fa-envelope icon" ></i>
+            <i style={{position: 'relative',left: 230,top:20}} className="fa fa-envelope icon" ></i>
             <input
               placeholder="Email"
               type="email"

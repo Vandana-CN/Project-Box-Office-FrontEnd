@@ -104,7 +104,7 @@ const Home = () => {
     };
   
     return (
-      <Carousel activeIndex={index} onSelect={handleSelect} styl>
+      <Carousel activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item>
           <img
             className="d-block w-100"
@@ -174,28 +174,33 @@ const Home = () => {
 <div className='container'>
   <div className="row row-cols-1 row-cols-md-3 g-4">
 
-  {users.map((user, index) => {
-   return(<> 
-              {/* <tr>
-                <th scope="row" key={index}>{index+1}</th>
-                <td>{user.movieName}</td>
-
-              </tr> */}
-  <div className="col">
-    <div className="card" style={{'height':500,'width':300}}>
-    <img src={user.image} class="card-img-top" alt="..."/>
+  {users.map((user, index) => (
+  <div className="col" key={index}>
+    <div className="card" style={{ height: 500, width: 300 }}>
+      <img src={`data:image/jpeg;base64,${user.image}`} className="card-img-top" alt="..." />
       <div className="card-body">
-        <h5 className="card-title" style={{color:'black'}}>{user.movieName}</h5>
-        <button value={user.movieName} style={{backgroundColor:'rgb(248, 68, 100)',color:'white',borderRadius:5,width:120,height:40,borderColor:'rgb(34, 37, 57)',border:'none',fontSize:15,fontWeight:'bold'}} 
-        // onClick={navigateToBookNew}>Book New</button>
-        onClick={() => navigateToBookNew(user.movieName)}>Book Now</button>
+        <h5 className="card-title" style={{ color: 'black' }}>{user.movieName}</h5>
+        <button
+          value={user.movieName}
+          style={{
+            backgroundColor: 'rgb(248, 68, 100)',
+            color: 'white',
+            borderRadius: 5,
+            width: 120,
+            height: 40,
+            borderColor: 'rgb(34, 37, 57)',
+            border: 'none',
+            fontSize: 15,
+            fontWeight: 'bold'
+          }}
+          onClick={() => navigateToBookNew(user.movieName)}
+        >
+          Book Now
+        </button>
       </div>
     </div>
   </div>
-  
-  </>
-
-  )})}
+))}
 </div>
 </div>
 

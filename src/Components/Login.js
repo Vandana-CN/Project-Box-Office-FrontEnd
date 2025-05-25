@@ -91,7 +91,7 @@ href=
         <form onSubmit={handleLogin}>
           <div className="form-group">
             <label style={{fontSize: 20}} htmlFor="username">Username</label>
-            <i style={{position: 'relative',left: 230,top: 20}} class="fa fa-envelope icon" ></i>
+            <i style={{position: 'relative',left: 230,top: 20}} className="fa fa-envelope icon" ></i>
             <input
               
               placeholder="Username@gmail.com"
@@ -106,7 +106,7 @@ href=
 
           <div className="form-group">
             <label style={{fontSize: 20}} htmlFor="password">Password</label>
-            <i style={{position: 'relative',top: 20,left: 230}}class="fa fa-lock" aria-hidden="true"></i>
+            <i style={{position: 'relative',top: 20,left: 230}}className="fa fa-lock" aria-hidden="true"></i>
             <input
               placeholder="Password"
               type="password"
