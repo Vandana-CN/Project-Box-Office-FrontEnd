@@ -58,7 +58,7 @@ const AdminBoard = () => {
     }
   
     try {
-      await axios.post("http://localhost:8080/api/test/movie", user);
+      await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/test/movie`, user);
       alert("Movie Added Successfully");
       navigate("/");
     } catch (error) {

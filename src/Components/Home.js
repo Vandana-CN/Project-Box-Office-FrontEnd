@@ -69,13 +69,13 @@ const Home = () => {
   // const AllUsers = async () => {
 
   //   //console.log("hello") 
-  //   const res = await axios.get("http://localhost:8080/api/test/movie/allmovies");
+  //   const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/test/movie/allmovies`);
   //   console.log(res.data);
  
   // };
 
   const AllUsers = async () => {
-    axios.get('http://localhost:8080/api/test/movie/allmovies').then((response)=>{
+    axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/test/movie/allmovies`).then((response)=>{
        setUsers(response.data);
        console.log(response);
    })}

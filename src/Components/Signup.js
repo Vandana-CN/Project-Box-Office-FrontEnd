@@ -21,7 +21,7 @@ const Signup = () => {
   //   e.preventDefault();
    
 
-  //    await axios.post("http://localhost:8080/api/auth/signup",user);
+  //    await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/auth/signup`,user);
   //    alert("Registered Succesfully")
   //    navigate("/login")
   //  };

@@ -68,7 +68,7 @@
   
   
    const BookedSeats = async () => {
-    axios.get('http://localhost:8080/api/test/booking/allbookings').then((response)=>{
+    axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/test/booking/allbookings`).then((response)=>{
       setBookedSeats(response.data);
   // movies[0].name=response.data[0].movieName;
       movies[0].name=currentmovie;
@@ -163,7 +163,7 @@ setUser({ ...NewDate, [e.target.name]: e.target.value });
             date:NewDate.date
           }
           ];
-       await axios.post("http://localhost:8080/api/test/booking", singleseat);
+       await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/test/booking`, singleseat);
        
       }
       alert("Ticket Booked Successfully");
@@ -187,7 +187,7 @@ setUser({ ...NewDate, [e.target.name]: e.target.value });
     // }, []);
 
     //  const BookedSeats = async () => {
-    //   axios.get('http://localhost:8080/api/test/booking/allbookings').then((response)=>{
+    //   axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/test/booking/allbookings`).then((response)=>{
     //     setBookedSeats(response.data);
     //      console.log(response.data);
     //  })}

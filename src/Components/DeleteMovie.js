@@ -34,13 +34,13 @@ const DeleteMovie = () => {
   }, []);
 
   const AllUsers = async () => {
-    axios.get('http://localhost:8080/api/test/movie/allmovies').then((response)=>{
+    axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/test/movie/allmovies`).then((response)=>{
        setUsers(response.data);
        console.log(response);
    })}
 
    const deleteUser=async(id)=>{
-    axios.delete(`http://localhost:8080/api/test/movie/${id}`).then((response)=>{
+    axios.delete(`${process.env.REACT_APP_API_BASE_URL}/api/test/movie/${id}`).then((response)=>{
     alert("Movie Deleted Succesfully");
     setUsers(response.data);
     window.location.reload();

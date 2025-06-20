@@ -29,7 +29,7 @@ const Profile = () => {
 
   }, []);
   const AllUsers = async () => {
-    axios.get('http://localhost:8080/api/test/booking/allbookings').then((response)=>{
+    axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/test/booking/allbookings`).then((response)=>{
        setUsers(response.data);
        console.log(response);
    })}
