@@ -82,8 +82,10 @@ const Home = () => {
 
   const AllUsers = async () => {
   try {
+    
     const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/test/movie/allmovies`);
     console.log("Movies API response:", response);
+    console.log("Users response:", response.data);
     setUsers(response.data);
   } catch (error) {
     console.error("Error fetching movies:", error);
