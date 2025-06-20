@@ -74,11 +74,22 @@ const Home = () => {
  
   // };
 
+  // const AllUsers = async () => {
+  //   axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/test/movie/allmovies`).then((response)=>{
+  //      setUsers(response.data);
+  //      console.log(response);
+  //  })}
+
   const AllUsers = async () => {
-    axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/test/movie/allmovies`).then((response)=>{
-       setUsers(response.data);
-       console.log(response);
-   })}
+  try {
+    const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/test/movie/allmovies`);
+    console.log("Movies API response:", response);
+    setUsers(response.data);
+  } catch (error) {
+    console.error("Error fetching movies:", error);
+    setUsers([]);  // Prevent .map crash
+  }
+};
 
 
   useEffect(() => {
